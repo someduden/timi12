@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Functions - Verkefni</title>
+  </head>
+  <body>
+    <h1>Verkefni: JavaScript Functions</h1>
+    <p>
+      Hér eru verkefni þar sem þú átt að skrifa eigin föll (functions) í
+      JavaScript.
+    </p>
+    <hr />
+
+    <!-- Æfing 1 -->
+    <h2>Æfing 1: Kveðja</h2>
+    <p>
+      Gerðu function sem birtir textann "Halló heimur!" þegar ýtt er á takkann.
+    </p>
+    <button onclick="sayHello()">Smelltu hér</button>
+    <p id="aefing1"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir sayHello()
+      // og birtir "Halló heimur!" í elementinu með id="aefing1"
+
+      function sayHello() {
+        document.getElementById("aefing1").innerHTML = "Halló heimur!";
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 2 -->
+    <h2>Æfing 2: Nafn og aldur</h2>
+    <p>
+      Sláðu inn nafn og aldur. Gerðu function sem skrifar: "Halló [nafn], þú ert
+      [aldur] ára!"
+    </p>
+    <input id="nameInput" type="text" placeholder="Nafn" />
+    <input id="ageInput" type="number" placeholder="Aldur" />
+    <button onclick="showInfo()">Sýna upplýsingar</button>
+    <p id="aefing2"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir showInfo()
+      // - Les inn gildi úr input (nameInput og ageInput)
+      // - Skrifar "Halló [nafn], þú ert [aldur] ára!" í aefing2
+
+      function showInfo() {
+        let name = document.getElementById("nameInput").value;
+        let age = document.getElementById("ageInput").value;
+
+        document.getElementById("aefing2").innerHTML =
+          "Halló " + name + ", þú ert " + age + " ára!";
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 3 -->
+    <h2>Æfing 3: Samlagning</h2>
+    <p>
+      Gerðu function sem tekur tvær tölur úr input og skrifar summuna þeirra.
+    </p>
+    <input id="num1" type="number" placeholder="Tala 1" />
+    <input id="num2" type="number" placeholder="Tala 2" />
+    <button onclick="addNumbers()">Reikna summu</button>
+    <p id="aefing3"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir addNumbers()
+      // - Les inn tvær tölur (num1 og num2)
+      // - Reiknar summuna og birtir hana í aefing3
+
+      function addNumbers(num1, num2) {
+        let number1 = document.getElementById("num1").value;
+        let number2 = document.getElementById("num2").value;
+        let sum = Number(number1) + Number(number2);
+        document.getElementById("aefing3").innerHTML = "Summan er: " + sum;
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 4 -->
+    <h2>Æfing 4: Lengd orðs</h2>
+    <p>
+      Gerðu function sem telur hversu margir stafir eru í orðinu sem notandinn
+      skrifar.
+    </p>
+    <input id="wordInput" type="text" placeholder="Sláðu inn orð" />
+    <button onclick="countLetters()">Telja stafi</button>
+    <p id="aefing4"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir countLetters()
+      // - Les inn orðið úr wordInput
+      // - Birtir fjölda stafa í aefing4
+
+      function countLetters() {
+        let word = document.getElementById("wordInput").value.length;
+        document.getElementById("aefing4").innerHTML = "Lengd er: " + word;
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 5 -->
+    <h2>Æfing 5: Breyta lit</h2>
+    <p>
+      Gerðu function sem breytir litnum á boxinu hér fyrir neðan í þann lit sem
+      notandinn skrifar.
+    </p>
+    <input id="colorInput" type="text" placeholder="t.d. red eða blue" />
+    <button onclick="changeColor()">Breyta lit</button>
+    <div
+      id="colorBox"
+      style="
+        width: 150px;
+        height: 150px;
+        background: lightgray;
+        margin-top: 10px;
+      "
+    ></div>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir changeColor()
+      // - Les inn lit úr colorInput
+      // - Breytir backgroundColor á elementinu colorBox
+
+      function changeColor() {
+        let read = document.getElementById("colorInput").value;
+        document.getElementById("colorBox").style.backgroundColor = read;
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 6 -->
+    <h2>Æfing 6: Aukaáskorun 🌟</h2>
+    <p>
+      Búðu til hitastigabreytir sem les gráður í Celsius og breytir í
+      Fahrenheit.<br />
+      Formúla: <code>F = (C * 9/5) + 32</code>
+    </p>
+    <input id="celsius" type="number" placeholder="°C" />
+    <button onclick="convertTemp()">Breyta í Fahrenheit</button>
+    <p id="aefing6"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir convertTemp()
+      // - Les inn gráður úr celsius
+      // - Reiknar F = (C * 9/5) + 32
+      // - Sýnir niðurstöðuna í aefing6
+
+      function convertTemp() {
+        let cels = document.getElementById("celsius").value;
+        let Fahr = (cels * 9) / 5 + 32;
+        document.getElementById("aefing6").innerHTML = Fahr;
+      }
+    </script>
+
+    <!-- Æfing 7 -->
+    <h2>Æfing 7: Finna stærstu tölu</h2>
+    <p>Sláðu inn tvær tölur og sjáðu hvor er stærri.</p>
+    <input id="numA" type="number" placeholder="Tala A" />
+    <input id="numB" type="number" placeholder="Tala B" />
+    <button onclick="findMax()">Finna stærstu</button>
+    <p id="aefing7"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir findMax()
+      // - Les inn tvær tölur (numA og numB)
+      // - Ber þær saman
+      // - Birtir stærri töluna í aefing7
+
+      function findMax() {
+        let numA = document.getElementById("numA").value;
+        let numB = document.getElementById("numB").value;
+
+        if (numA > numB) {
+          document.getElementById("aefing7").innerHTML =
+            "Stærri talan er: " + numA;
+        } else {
+          document.getElementById("aefing7").innerHTML =
+            "Stærri talan er: " + numB;
+        }
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 8 -->
+    <h2>Æfing 8: Snúa texta við</h2>
+    <input id="reverseInput" type="text" placeholder="Sláðu inn texta" />
+    <button onclick="reverseText()">Snúa við</button>
+    <p id="aefing8"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir reverseText()
+      // - Les inn textann úr reverseInput
+      // - Snýr honum við (t.d. "Halló" → "óllaH")
+      // - Birtir niðurstöðuna í aefing8
+
+      function reverseText() {
+        let text = document.getElementById("reverseInput").value;
+        let reversed = text.split("").reverse().join("");
+        document.getElementById("aefing8").innerHTML = reversed;
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 9 -->
+    <h2>Æfing 9: Meðaltal þriggja talna</h2>
+    <input id="numX" type="number" placeholder="Tala 1" />
+    <input id="numY" type="number" placeholder="Tala 2" />
+    <input id="numZ" type="number" placeholder="Tala 3" />
+    <button onclick="calcAverage()">Reikna meðaltal</button>
+    <p id="aefing9"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir calcAverage()
+      // - Les inn þrjár tölur (numX, numY, numZ)
+      // - Reiknar meðaltalið
+      // - Birtir niðurstöðuna í aefing9
+
+      function calcAverage() {
+        let numX = document.getElementById("numX").value;
+        let numY = document.getElementById("numY").value;
+        let numZ = document.getElementById("numZ").value;
+        let total = Number(numX) + Number(numY) + Number(numZ);
+        let avg = total / 3;
+        document.getElementById("aefing9").innerHTML = "Average is: " + avg;
+      }
+    </script>
+
+    <hr />
+
+    <!-- Æfing 10 -->
+    <h2>Æfing 10: Kasta teningi 🎲</h2>
+    <button onclick="rollDice()">Kasta</button>
+    <p id="aefing10"></p>
+
+    <script>
+      // TODO: Skrifaðu function sem heitir rollDice()
+      // - Býr til slembitölu á milli 1 og 6
+      // - Birtir niðurstöðuna í aefing10
+
+      function rollDice() {
+        let roll = Math.floor(Math.random() * 6) + 1;
+        document.getElementById("aefing10").innerHTML = roll;
+      }
+    </script>
+  </body>
+</html>

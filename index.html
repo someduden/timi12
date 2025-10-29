@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tími 12</title>
+  </head>
+  <body>
+    <section style="background-color: bisque">
+      <h1>Æfing 1: Halló heimur</h1>
+      <p>Smelltu á takkan til að kalla á function</p>
+
+      <button onclick="sayHello()">Smelltu á mig</button>
+      <p id="aefing1"></p>
+
+      <script>
+        function sayHello() {
+          document.getElementById("aefing1").innerHTML = "Halló heimur!";
+        }
+      </script>
+    </section>
+
+    <section style="background-color: beige">
+      <h1>Æfing 2: Kveðja með nafni</h1>
+      <p>Sláðu inn nafni og smelltu á takkann:</p>
+      <input type="text" id="nameInput" placeholder="Nafn" />
+      <button onclick="greet()">Búa til kveðju</button>
+      <p id="aefing2"></p>
+
+      <script>
+        function greet() {
+          let name = document.getElementById("nameInput").value;
+          document.getElementById("aefing2").innerHTML = "Halló " + name + "!";
+        }
+      </script>
+    </section>
+
+    <section style="background-color: bisque">
+      <h1>Æfing 3: Samanlagning</h1>
+      <p>Reikna summu tveggja tala</p>
+      <input type="text" id="number1" placeholder="Tala 1" />
+      <input type="text" id="number2" placeholder="Tala 2" />
+      <button
+        onclick="addNumbers(document.getElementById('number1').value, document.getElementById('number2').value)"
+      >
+        Reikna summu
+      </button>
+      <p id="aefing3"></p>
+
+      <script>
+        function addNumbers(tala1, tala2) {
+          let sum = Number(tala1) + Number(tala2);
+          document.getElementById("aefing3").innerHTML = "Summan er: " + sum;
+        }
+      </script>
+    </section>
+
+    <section style="background-color: beige">
+      <h1>Æfing 4: Reikna flatarmál</h1>
+      <p>Sláðu inn lengd og breidd til að fá flatarmál</p>
+
+      <input type="number" id="lengd" placeholder="Lengd" />
+      <input type="number" id="breidd" placeholder="Breidd" />
+      <button onclick="calculate()">Reikna flatarmál</button>
+      <p id="aefing4"></p>
+
+      <script>
+        function calculate() {
+          let lengd = document.getElementById("lengd").value;
+          let breidd = document.getElementById("breidd").value;
+          let flatarmal = lengd * breidd;
+          document.getElementById("aefing4").innerHTML =
+            "Flatarmál er: " + flatarmal;
+        }
+      </script>
+    </section>
+
+    <section style="background-color: bisque">
+      <h1>Æfing 5: Arrow Function</h1>
+      <p>Gerum sinnum með arrow function</p>
+
+      <p id="aefing5"></p>
+      <script>
+        const sinnum = (a, b) => a * b;
+
+        let result = sinnum(5, 9);
+        document.getElementById("aefing5").innerHTML = "5 * 9 = " + result;
+      </script>
+    </section>
+
+    <section style="background-color: beige">
+      <h1>Æfing 6: Er talan oddatala eða slétt tala?</h1>
+      <p>
+        Settu inn tölu og tölvan mun segja hvort talan sé slétt tala eða
+        oddatala
+      </p>
+
+      <input type="number" id="numInput" placeholder="Sláðu inn tölu" />
+      <button onclick="checkEvenOdd()">Check</button>
+      <p id="aefing6"></p>
+
+      <script>
+        function checkEvenOdd() {
+          let num = document.getElementById("numInput").value;
+          let result = num % 2 === 0 ? "Slétt tala" : "Oddatala";
+          document.getElementById("aefing6").innerHTML = "Talan er: " + result;
+        }
+      </script>
+    </section>
+
+    <section style="background-color: bisque">
+      <h1>Æfing 7: Sýna dagsetningu og tíma</h1>
+      <p>Búa til takka sem sýnir dagsetningu og tíma þegar þú smellir á hann</p>
+
+      <button onclick="showDateTime()">Hvað er klukkan?</button>
+      <p id="aefing7"></p>
+
+      <script>
+        function showDateTime() {
+          let now = new Date();
+
+          document.getElementById("aefing7").innerHTML =
+            "Klukkan er: " + now.toLocaleString("is-IS");
+        }
+      </script>
+    </section>
+  </body>
+</html>
